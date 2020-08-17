@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-box-sizing: border-box;
+}
+
+*:focus:not(.focus-visible) {
+    outline: none;
+    color: #00dfb4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #001a15;
+    color: #f2fffd;
+    font-family: 'Oxygen', sans-serif;
+}
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+    left: 1rem;
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 4rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+#logo:hover {
+    color: #cbfff5;
+}
+
+#logo:focus-visible {
+    color: #cbfff5;
+    border: 1px solid #cbfff5;
+}
+
+nav {
+    display: flex;
+    float: right;
+    font-size: 2rem;
+}
+
+nav a {
+    padding: 0 2rem;
+    color: #f2fffd;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #cbfff5;
+    text-decoration: underline;
+}
+
+nav a:focus {
+    color: #cbfff5;
+    text-decoration: underline;
+}
+
+nav a:focus-visible {
+    color: #cbfff5;
+    border: 1px solid #cbfff5;
+}
+
+#home {
+    width: 80%;
+    height: 100vh;
+    margin-left: 10%;
+    line-height: 1.5;
+}
+
+#home h1 span {
+    display: block;
+}
+
+#home h1 span:nth-child(1) {
+    margin-top: 50px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#home h1 span:nth-child(2) {
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+#home p:nth-child(2) {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e6f8f4;
+}
+
+#home p:nth-child(3) {
+    margin: 30px 0 50px 0;
+    width: 48%;
+    font-size: 1.5rem;
+    color: #e6f8f4;
+    line-height: 1.6;
+}
+
+#home a {
+    text-decoration: none;
+    padding-bottom: 2rem;
+}
+
+svg {
+    fill: #f2fffd;
+}
+
+svg:hover {
+    fill: #cbfff5;
+    border: 1px solid #cbfff5;
+}
+
+a:focus svg {
+    fill: #00dfb4;
+    border: 1px solid #cbfff5;
+}
+
+.linkedin {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.portfolio-btn {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.portfolio-btn a {
+    display: inline-block;
+    padding: 1.5rem;
+    background-color: transparent;
+    border: 1px solid #f2fffd;
+    border-radius: 5px;
+    color: #f2fffd;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+}
+
+.portfolio-btn a:hover {
+    color: #000;
+    background-color: rgba(	203, 255, 245, 0.9);
+    cursor: pointer;
+}
+
+.portfolio-btn a:focus {
+    color: #000;
+    background-color: rgba(	203, 255, 245, 0.9);
+    cursor: pointer;
+}
+
+#portfolio {
+    width: 80%;
+    height: 100vh;
+    margin-left: 10%;
+    line-height: 1.5;
+}
+
+#portfolio h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e6f8f4;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.project-img {
+    width: 55%;
+    float: left;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.project-img a img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-img:hover {
+    border: 1px solid #cbfff5;
+}
+
+.project-img a:focus {
+    border: 1px solid #cbfff5;
+}
+
+.project-details {
+    margin-top: 1.5rem;
+    margin-left: 60%;
+    padding: 1rem;
+}
+
+.project-details a {
+    color: #cbfff5;
+}
+
+.project-details a:hover {
+    text-decoration: underline;
+}
+
+.project-details a:focus {
+    text-decoration: underline;
+}
+
+.project-details a h3 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.project-details p {
+    padding-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.project-details ul {
+    list-style: none;
+}
+
+.project-details ul li {
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.project-details .project-links a {
+    text-decoration: none;
+}
+
+.project-details .project-links svg {
+    margin: 2rem 2rem 2rem 0;
+}
+
+@media (max-width: 1024px) {
+    .project-img {
+        width: 100%;
+    }
+     .project-details {
+         margin-left: 0;
+     }
+    
+}
