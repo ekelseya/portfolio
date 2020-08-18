@@ -177,6 +177,10 @@ a:focus svg {
     cursor: pointer;
 }
 
+.project-left,.project-right {
+    height: 100vh;
+}
+
 .project-left .project-img {
     width: 55%;
     float: left;
