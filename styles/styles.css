@@ -30,18 +30,15 @@ h2 {
     padding-bottom: 1rem;
 }
 
-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 1rem;
-    left: 1rem;
-}
-
 #logo {
     font-family: 'Lobster', cursive;
     font-size: 4rem;
     margin-left: 2rem;
     cursor: pointer;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+    left: 1rem;
 }
 
 #logo:hover {
