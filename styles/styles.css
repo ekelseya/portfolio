@@ -22,6 +22,15 @@ body {
     font-family: 'Oxygen', sans-serif;
 }
 
+header {
+    position: relative;
+    top: 8rem;
+}
+
+section {
+    padding-top: 6rem;
+}
+
 h2 {
     font-weight: 700;
     font-size: 2rem;
@@ -30,15 +39,33 @@ h2 {
     padding-bottom: 1rem;
 }
 
+h3 {
+    color: #cbfff5;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.container{
+    margin-bottom: 3rem;
+}
+
+.nav-wrapper {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #001a15;
+    z-index: 1000;
+}
+
 #logo {
     font-family: 'Lobster', cursive;
     font-size: 4rem;
-    margin-left: 2rem;
     cursor: pointer;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 1rem;
-    left: 1rem;
 }
 
 #logo:hover {
@@ -51,13 +78,15 @@ h2 {
 }
 
 nav {
+    height: 6rem;
     display: flex;
-    float: right;
+    align-content: space-around;
     font-size: 2rem;
 }
 
 nav a {
-    padding: 0 2rem;
+    padding: 2rem;
+    float: right;
     color: #f2fffd;
     text-decoration: none;
     text-transform: uppercase;
@@ -76,12 +105,6 @@ nav a:focus {
 nav a:focus-visible {
     color: #cbfff5;
     border: 1px solid #cbfff5;
-}
-
-@media (max-width: 790px) {
-    nav {
-        display: none;
-    }
 }
 
 .container {
@@ -174,21 +197,11 @@ a:focus svg {
     cursor: pointer;
 }
 
-.project-left,.project-right {
-    height: 100vh;
-}
-
-.project-left .project-img {
+.project-img {
     width: 55%;
     float: left;
     margin-top: 1rem;
     margin-bottom: 2rem;
-}
-
-.project-right .project-img {
-    margin-top: 1.5rem;
-    margin-left: 45%;
-    padding: 1rem;
 }
 
 .project-img a img {
@@ -204,35 +217,27 @@ a:focus svg {
     border: 1px solid #cbfff5;
 }
 
-.project-left .project-details {
+.project-details {
     margin-top: 1.5rem;
     margin-left: 60%;
     padding: 1rem;
 }
 
-.project-right .project-details {
-    width: 40%;
-    float: left;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
-
-.project-details a {
+.project-details a, h3 a {
     color: #cbfff5;
 }
 
-.project-details a:hover {
+.project-details a:hover, h3 a:hover {
     text-decoration: underline;
 }
 
-.project-details a:focus {
-    text-decoration: underline;
+.project-details a:visited, h3 a:visited {
+    color: #00dfb4;
+    text-decoration: none;
 }
 
-.project-details a h3 {
-    margin-bottom: 1rem;
-    font-weight: 700;
-    font-size: 1.5rem;
+.project-details a:focus, h3 a:visited {
+    text-decoration: underline;
 }
 
 .project-details p {
@@ -260,32 +265,21 @@ a:focus svg {
 }
 
 @media (max-width: 1024px) {
+    .project-left {
+        display: inline-block;
+    }
+
     .project-img {
+        float: none;
+        margin-left: 0;
         width: 100%;
         display: block;
     }
-    .project-left .project-img {
-        width: 80%;
-        display: block;
-    }
-    .project-right .project-img {
-        width: 80%;
+    .project-details {
+        float: none;
         margin-left: 0;
-        display: block;
-    }
-     .project-details {
-         margin-left: 0;
-         width: 80%;
-         display: block;
-     }
-    .project-right .project-details {
-        width: 80%;
-        margin-left: 0;
-        display: block;
-    }
-    .project-left .project-details {
-        width: 80%;
-        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
         display: block;
     }
 }
@@ -311,7 +305,7 @@ a:focus svg {
 hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(	203, 255, 245, 0.3), rgba(	203, 255, 245, 0.9), rgba(	203, 255, 245, 0.3));
+    background-image: linear-gradient(to right, rgba(203, 255, 245, 0.3), rgba(203, 255, 245, 0.9), rgba(203, 255, 245, 0.3));
     margin: 2rem;
 }
 
@@ -333,6 +327,16 @@ hr {
     padding: 1.25rem 0;
     font-size: 1.25rem;
     line-height: 2;
+}
+
+@media screen and (max-width: 796px){
+    #about ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        font-size: 1.5rem;
+    }
+
 }
 
 #about li {
