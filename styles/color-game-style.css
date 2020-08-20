@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    /*As a silly note, the background color is eigengrau:
+    https://en.wikipedia.org/wiki/Eigengrau*/
+    background-color: 	#16161D;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading {
+    background-color: #797676;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.heading h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+
+.heading p {
+    letter-spacing: .125rem;
+}
+
+#color-span {
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+}
+
+#game-instructions {
+    padding: 0 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: #dddddd;
+    color: #16161D;
+}
+
+#game-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#game-message {
+    padding: 16px;
+    width: 20%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.square {
+    width: 30%;
+    margin: 1.66%;
+    border-radius: 30px;
+    padding-bottom: 30%;
+    float: left;
+}
+
+button {
+    padding: 16px;
+    border: none;
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 400;
+    color: #16161D;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+}
+
+button:hover {
+    background: #16161D;
+    color: #dddddd;
+}
+
+.selected {
+    background: #16161D;
+    color: #dddddd;
+}

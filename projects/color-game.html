@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/color-game-style.css" type="text/css">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Game</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>The Great Hexadecimal Color Game</h1>
+        <p>
+            Click on the square that matches the hexadecimal color notation.
+        </p>
+        <h2><span id="color-span">#FFFFFF</span></h2>
+    </div>
+    <div id="game-instructions">
+        <button id="reset">New Colors</button>
+        <span id="game-message"></span>
+        <span>
+            <button class="mode">Easy</button>
+            <button class="mode selected">Hard</button>
+        </span>
+    </div>
+    <div id="game-container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+<script type="text/javascript" src="../js/color-game.js"></script>
+</body>
+</html>
