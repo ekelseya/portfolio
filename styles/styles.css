@@ -148,6 +148,12 @@ nav a:focus-visible {
     padding-bottom: 2rem;
 }
 
+@media (max-width: 798px) {
+    #home p:nth-child(3) {
+        width: 100%;
+    }
+}
+
 svg {
     fill: #f2fffd;
 }
@@ -329,7 +335,7 @@ hr {
     line-height: 2;
 }
 
-@media screen and (max-width: 796px){
+@media screen and (max-width: 798px){
     #about ul {
         -webkit-column-count: 1;
         -moz-column-count: 1;
