@@ -156,6 +156,7 @@ nav a:focus-visible {
 
 svg {
     fill: #f2fffd;
+    margin-right: 1rem;
 }
 
 svg:hover {
@@ -166,11 +167,6 @@ svg:hover {
 a:focus svg {
     fill: #00dfb4;
     border: 1px solid #cbfff5;
-}
-
-.linkedin {
-    margin-left: 1rem;
-    margin-right: 1rem;
 }
 
 .btn {
