@@ -45,16 +45,16 @@ function validateForm() {
     }
 }
 
-var autoExpand = function(field) {
+const autoExpand = function(field) {
 
     // Reset field height
     field.style.height = 'inherit';
 
     // Get the computed styles for the element
-    var computed = window.getComputedStyle(field);
+    const computed = window.getComputedStyle(field);
 
     // Calculate the height
-    var height = parseInt(computed.getPropertyValue('border-top-width'), 10) +
+    const height = parseInt(computed.getPropertyValue('border-top-width'), 10) +
         parseInt(computed.getPropertyValue('padding-top'), 10) +
         field.scrollHeight +
         parseInt(computed.getPropertyValue('padding-bottom'), 10) +

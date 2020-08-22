@@ -287,51 +287,64 @@ a:focus svg {
 
 .project-list {
     display: grid;
-    grid-gap: 1rem;
-    grid-template-areas:
-            "header"
-            "image"
-            "content";
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 3.33%;
 }
 
-.project-list h4 {
-    grid-area: header;
+.project-small {
+    border: 1px solid #cbfff5;
+    border-radius: 0.25rem;
 }
 
-.project-list img {
-    grid-area: image;
-    height: 200px;
+.project-small h4 {
+    padding: 2rem;
+    height: 8rem;
+    font-size: 1.5rem;
 }
 
-.project-list ul {
-    grid-area: content;
+.project-small h4 a {
+    color: #cbfff5;
+    text-decoration: none;
 }
 
-@media only screen and (min-width: 500px)  {
-    .project-list {
-
-        grid-template-columns: 20% auto;
-        grid-template-areas:
-                "header   header"
-                "image  image"
-                "content content";
-    }
+.project-small h4 a:hover {
+    border-bottom: 2px solid #cbfff5;
 }
 
-@media only screen and (min-width: 600px)   {
-    .wrapper {
-        grid-gap: 20px;
-        grid-template-columns: 120px auto 120px;
-        grid-template-areas:
-                "header  header"
-                "image content";
-        max-width: 600px;
-    }
+.project-small h4 a:visited {
+    color: #00dfb4;
+    text-decoration: none;
+    border-bottom: 2px solid #00dfb4;
+}
+
+.project-small h4 a:focus {
+    text-decoration: none;
+    border-bottom: 2px solid #cbfff5;
+}
+
+
+.project-small img {
+    margin-left: auto;
+    width: 100%;
+}
+
+.project-small .description {
+    padding: 2rem;
+}
+
+.project-small .description p {
+    padding-top: 2rem;
 }
 
 @media (max-width: 1024px) {
     .project-left {
         display: inline-block;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        grid-gap: 5%;
     }
 
     .project-img {
@@ -346,6 +359,12 @@ a:focus svg {
         padding-left: 0;
         width: 100%;
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-list {
+        display: inline-block;
     }
 }
 
