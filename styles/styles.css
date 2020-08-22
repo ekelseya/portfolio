@@ -46,8 +46,16 @@ h3 {
     font-size: 1.75rem;
 }
 
+ul {
+    list-style: none;
+}
+
 .container{
     margin-bottom: 3rem;
+    width: 80%;
+    min-height: 100vh;
+    margin-left: 10%;
+    line-height: 1.5;
 }
 
 .nav-wrapper {
@@ -107,11 +115,18 @@ nav a:focus-visible {
     border: 1px solid #cbfff5;
 }
 
-.container {
-    width: 80%;
-    min-height: 100vh;
-    margin-left: 10%;
-    line-height: 1.5;
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0.5rem;
+        float: right;
+        background-color: #001a15;
+    }
+    nav a {
+        padding: 0.25rem 1rem;
+        font-size: 1rem;
+    }
+
 }
 
 #home h1 span {
@@ -199,6 +214,11 @@ a:focus svg {
     cursor: pointer;
 }
 
+.project-left {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
 .project-img {
     width: 55%;
     float: left;
@@ -227,19 +247,22 @@ a:focus svg {
 
 .project-details a, h3 a {
     color: #cbfff5;
+    text-decoration: none;
 }
 
 .project-details a:hover, h3 a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid #cbfff5;
 }
 
 .project-details a:visited, h3 a:visited {
     color: #00dfb4;
     text-decoration: none;
+    border-bottom: 2px solid #00dfb4;
 }
 
-.project-details a:focus, h3 a:visited {
-    text-decoration: underline;
+.project-details a:focus, h3 a:focus {
+    text-decoration: none;
+    border-bottom: 2px solid #cbfff5;
 }
 
 .project-details p {
@@ -247,10 +270,6 @@ a:focus svg {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
-}
-
-.project-details ul {
-    list-style: none;
 }
 
 .project-details ul li {
@@ -264,6 +283,50 @@ a:focus svg {
 
 .project-details .project-links svg {
     margin: 2rem 2rem 2rem 0;
+}
+
+.project-list {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas:
+            "header"
+            "image"
+            "content";
+}
+
+.project-list h4 {
+    grid-area: header;
+}
+
+.project-list img {
+    grid-area: image;
+    height: 200px;
+}
+
+.project-list ul {
+    grid-area: content;
+}
+
+@media only screen and (min-width: 500px)  {
+    .project-list {
+
+        grid-template-columns: 20% auto;
+        grid-template-areas:
+                "header   header"
+                "image  image"
+                "content content";
+    }
+}
+
+@media only screen and (min-width: 600px)   {
+    .wrapper {
+        grid-gap: 20px;
+        grid-template-columns: 120px auto 120px;
+        grid-template-areas:
+                "header  header"
+                "image content";
+        max-width: 600px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -380,9 +443,19 @@ form {
     margin-bottom: 0;
 }
 
-.form-input input::placeholder {
-    opacity: 0.8;
-    font-weight: 300;
+.form-input input
+{
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid  rgba(0,223,180,190);
 }
 
 .form-input input[type=text] {
@@ -398,29 +471,22 @@ form {
 .form-input textarea {
     font-weight: 400;
     width: 100%;
+    min-height: 4rem;
+    max-height: 50vh;
     resize: none;
     overflow: auto;
+    color: #001a15;
+}
+
+.form-input input::placeholder {
+    opacity: 0.8;
+    font-weight: 300;
 }
 
 .form-input textarea:focus {
+    color: #001a15;
     outline: 2px solid rgba(0,223,180,190);
     border-radius: 4px;
-}
-
-.form-input input
-{
-    transition: all 0.30s ease-in-out;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid  rgba(0,223,180,190);
-
 }
 
 .form-input input:active
