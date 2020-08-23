@@ -1,9 +1,14 @@
+const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+//Only enable AOS animations if prefers-reduced-motion set to false
 AOS.init({
+    disable: mediaQuery.matches,
     offset: 150,
     duration: 1000,
     delay: 100,
     once: true
 });
+
 //Scroll to top
 const logo = document.getElementById('logo');
 
