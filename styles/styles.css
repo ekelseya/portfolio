@@ -180,7 +180,7 @@ svg:hover {
 }
 
 a:focus svg {
-    fill: #00dfb4;
+    fill: #cbfff5;
     border: 1px solid #cbfff5;
 }
 
@@ -246,11 +246,12 @@ a:focus svg {
 }
 
 .project-details a, h3 a {
-    color: #cbfff5;
+    color: #f2fffd;
     text-decoration: none;
 }
 
 .project-details a:hover, h3 a:hover {
+    color: #cbfff5;
     border-bottom: 2px solid #cbfff5;
 }
 
@@ -303,12 +304,8 @@ a:focus svg {
 }
 
 .project-small h4 a {
-    color: #cbfff5;
+    color: #f2fffd;
     text-decoration: none;
-}
-
-.project-small h4 a:hover {
-    border-bottom: 2px solid #cbfff5;
 }
 
 .project-small h4 a:visited {
@@ -317,11 +314,14 @@ a:focus svg {
     border-bottom: 2px solid #00dfb4;
 }
 
+.project-small h4 a:hover {
+    border-bottom: 2px solid #cbfff5;
+}
+
 .project-small h4 a:focus {
     text-decoration: none;
     border-bottom: 2px solid #cbfff5;
 }
-
 
 .project-small img {
     margin-left: auto;
@@ -365,6 +365,7 @@ a:focus svg {
 @media (max-width: 768px) {
     .project-list {
         display: inline-block;
+        padding-bottom: 2rem;
     }
 }
 

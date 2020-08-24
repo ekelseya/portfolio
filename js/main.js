@@ -13,8 +13,11 @@ AOS.init({
 const logo = document.getElementById('logo');
 
 logo.addEventListener('keyup', function (evt) {
-    if(evt.key === 'Enter') {
+    if (evt.key === "Enter") {
         scrollTo(0,0);
+    }
+    if (evt.key === ' ' || evt.key === 'Spacebar') {
+        scrollTo(0,0)
     }
 })
 
