@@ -2,7 +2,7 @@ const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 //Only enable AOS animations if prefers-reduced-motion set to false
 AOS.init({
-    disable: mediaQuery.matches,
+    disable: (mediaQuery.matches),
     offset: 150,
     duration: 1000,
     delay: 100,

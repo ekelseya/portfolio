@@ -1,3 +1,28 @@
+:root {
+    --background: #001a15;
+    --color: #f2fffd;
+    --hover: #cbfff5;
+    --visited: #00dfb4;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #001a15;
+        --color: #f2fffd;
+        --hover: #cbfff5;
+        --visited: #00dfb4;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #f2fffd;
+        --color: #001a15;
+        --hover: #007D65;
+        --visited: #005545;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +34,7 @@
 
 *:focus:not(.focus-visible) {
     outline: none;
-    color: #00dfb4;
+    color: var(--hover);
 }
 
 html {
@@ -17,14 +42,14 @@ html {
 }
 
 body {
-    background-color: #001a15;
-    color: #f2fffd;
+    background-color: var(--background);
+    color: var(--color);
     font-family: 'Oxygen', sans-serif;
 }
 
 header {
     position: relative;
-    top: 8rem;
+    top: 4rem;
 }
 
 section {
@@ -34,13 +59,13 @@ section {
 h2 {
     font-weight: 700;
     font-size: 2rem;
-    color: #e6f8f4;
+    color: var(--color);
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
 h3 {
-    color: #cbfff5;
+    color: var(--color);
     margin-bottom: 1rem;
     font-weight: 700;
     font-size: 1.75rem;
@@ -48,6 +73,23 @@ h3 {
 
 ul {
     list-style: none;
+}
+
+a {
+    text-decoration: underline;
+    color: var(--color);
+}
+
+a:visited {
+    color: var(--visited);
+}
+
+a:hover {
+    color: var(--hover);
+}
+
+a:focus {
+    text-decoration: none;
 }
 
 .container{
@@ -60,13 +102,14 @@ ul {
 
 .nav-wrapper {
     width: 100vw;
-    position: fixed;
+    position: sticky;
+	position: -webkit-sticky;
     top: 0;
     left: 0;
     padding-left: 1rem;
     display: flex;
     justify-content: space-between;
-    background-color: #001a15;
+    background-color: var(--background);
     z-index: 1000;
 }
 
@@ -77,12 +120,12 @@ ul {
 }
 
 #logo:hover {
-    color: #cbfff5;
+    color: var(--hover);
 }
 
 #logo:focus-visible {
-    color: #cbfff5;
-    border: 1px solid #cbfff5;
+    color: var(--hover);
+    border: 1px solid var(--hover);
 }
 
 nav {
@@ -95,36 +138,40 @@ nav {
 nav a {
     padding: 2rem;
     float: right;
-    color: #f2fffd;
+    color: var(--color);
     text-decoration: none;
     text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #cbfff5;
+    color: var(--hover);
     text-decoration: underline;
 }
 
 nav a:focus {
-    color: #cbfff5;
+    color: var(--hover);
     text-decoration: underline;
 }
 
 nav a:focus-visible {
-    color: #cbfff5;
-    border: 1px solid #cbfff5;
+    color: var(--hover);
 }
 
 @media (max-width: 768px) {
+	
+	.nav-wrapper {
+		height: 8rem;
+	}
     nav {
         flex-direction: column;
         padding: 0.5rem;
         float: right;
-        background-color: #001a15;
+        background-color: var(--background);
     }
     nav a {
         padding: 0.25rem 1rem;
         font-size: 1rem;
+		background-color: var(--background);
     }
 
 }
@@ -134,7 +181,7 @@ nav a:focus-visible {
 }
 
 #home h1 span:nth-child(1) {
-    margin-top: 50px;
+    margin-top: 1rem;
     font-weight: 400;
     font-size: 1rem;
 }
@@ -147,14 +194,14 @@ nav a:focus-visible {
 #home p:nth-child(2) {
     font-weight: 700;
     font-size: 2rem;
-    color: #e6f8f4;
+    color: var(--color);
 }
 
 #home p:nth-child(3) {
-    margin: 30px 0 50px 0;
+    margin: 2rem 0 3.25rem 0;
     width: 48%;
     font-size: 1.5rem;
-    color: #e6f8f4;
+    color: var(--color);
     line-height: 1.6;
 }
 
@@ -170,18 +217,18 @@ nav a:focus-visible {
 }
 
 svg {
-    fill: #f2fffd;
+    fill: var(--color);
     margin-right: 1rem;
 }
 
 svg:hover {
-    fill: #cbfff5;
-    border: 1px solid #cbfff5;
+    fill: var(--hover);
+    border: 1px solid var(--hover);
 }
 
 a:focus svg {
-    fill: #cbfff5;
-    border: 1px solid #cbfff5;
+    fill: var(--hover);
+    border: 1px solid var(--hover);
 }
 
 .btn {
@@ -193,9 +240,9 @@ a:focus svg {
     display: inline-block;
     padding: 1.5rem;
     background-color: transparent;
-    border: 1px solid #f2fffd;
+    border: 1px solid var(--color);
     border-radius: 5px;
-    color: #f2fffd;
+    color: var(--color);
     font-size: 1.5rem;
     text-decoration: none;
     transition: background-color 0.5s ease;
@@ -203,14 +250,14 @@ a:focus svg {
 }
 
 .btn a:hover {
-    color: #000;
-    background-color: rgba(	203, 255, 245, 0.9);
+    color: var(--background);
+    background-color: var(--hover);
     cursor: pointer;
 }
 
 .btn a:focus {
-    color: #000;
-    background-color: rgba(	203, 255, 245, 0.9);
+    color: var(--background);
+    background-color: var(--hover);
     cursor: pointer;
 }
 
@@ -224,6 +271,11 @@ a:focus svg {
     float: left;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    border: 1px solid var(--color);
+}
+
+#cage {
+    background: url(/media/cage-screenshot.png) no-repeat;
 }
 
 .project-img a img {
@@ -232,11 +284,12 @@ a:focus svg {
 }
 
 .project-img:hover {
-    border: 1px solid #cbfff5;
+    border: 1px solid var(--hover);
 }
 
 .project-img a:focus {
-    border: 1px solid #cbfff5;
+    color: var(--hover);
+    border: 1px solid var(--hover);
 }
 
 .project-details {
@@ -245,25 +298,24 @@ a:focus svg {
     padding: 1rem;
 }
 
-.project-details a, h3 a {
-    color: #f2fffd;
+.project-details h3 a {
+    color: var(--color);
     text-decoration: none;
 }
 
-.project-details a:hover, h3 a:hover {
-    color: #cbfff5;
-    border-bottom: 2px solid #cbfff5;
+.project-details h3 a:visited {
+    color: var(--visited);
+    text-decoration: none;
 }
 
-.project-details a:visited, h3 a:visited {
-    color: #00dfb4;
+.project-details h3 a:hover {
     text-decoration: none;
-    border-bottom: 2px solid #00dfb4;
+    color: var(--hover);
 }
 
-.project-details a:focus, h3 a:focus {
+.project-details h3 a:focus {
+    color: var(--hover);
     text-decoration: none;
-    border-bottom: 2px solid #cbfff5;
 }
 
 .project-details p {
@@ -293,7 +345,7 @@ a:focus svg {
 }
 
 .project-small {
-    border: 1px solid #cbfff5;
+    border: 1px solid var(--color);
     border-radius: 0.25rem;
 }
 
@@ -304,23 +356,22 @@ a:focus svg {
 }
 
 .project-small h4 a {
-    color: #f2fffd;
+    color: var(--color);
     text-decoration: none;
 }
 
 .project-small h4 a:visited {
-    color: #00dfb4;
+    color: var(--visited);
     text-decoration: none;
-    border-bottom: 2px solid #00dfb4;
 }
 
 .project-small h4 a:hover {
-    border-bottom: 2px solid #cbfff5;
+    color: var(--hover);
 }
 
 .project-small h4 a:focus {
+    color: var(--hover);
     text-decoration: none;
-    border-bottom: 2px solid #cbfff5;
 }
 
 .project-small img {
@@ -390,7 +441,7 @@ a:focus svg {
 hr {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(203, 255, 245, 0.3), rgba(203, 255, 245, 0.9), rgba(203, 255, 245, 0.3));
+    background-image: linear-gradient(to right, var(--color), var(--hover), var(--color));
     margin: 2rem;
 }
 
@@ -442,15 +493,7 @@ hr {
     box-sizing: border-box;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 1px 10px rgba(0,223,180,190);
-}
-
-.form-header {
-    background: linear-gradient(35deg, #001a15, #007d65);
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 2rem;
+    box-shadow: 0 1px 10px var(--visited);
 }
 
 form {
@@ -475,17 +518,17 @@ form {
     padding: 1rem;
     box-sizing: border-box;
     border-radius: 4px;
-    border: 1px solid  rgba(0,223,180,190);
+    border: 1px solid  var(--visited);
 }
 
 .form-input input[type=text] {
     font-weight: 400;
-    color: #001a15;
+    color: var(--background);
 }
 
 .form-input input[type=email] {
     font-weight: 400;
-    color: #001a15;
+    color: var(--background);
 }
 
 .form-input textarea {
@@ -495,7 +538,7 @@ form {
     max-height: 50vh;
     resize: none;
     overflow: auto;
-    color: #001a15;
+    color: var(--background);
 }
 
 .form-input input::placeholder {
@@ -504,21 +547,21 @@ form {
 }
 
 .form-input textarea:focus {
-    color: #001a15;
-    outline: 2px solid rgba(0,223,180,190);
+    color: var(--background);
+    outline: 2px solid var(--visited);
     border-radius: 4px;
 }
 
 .form-input input:active
 {
-    box-shadow: 0 0 8px rgba(0,223,180,190);
-    outline: 2px solid  rgba(0,223,180,190);
+    box-shadow: 0 0 8px var(--visited);
+    outline: 2px solid  var(--hover);
 }
 
 .form-input input:focus
 {
-    box-shadow: 0 0 8px rgba(0,223,180,190);
-    outline: 2px solid  rgba(0,223,180,190);
+    box-shadow: 0 0 8px var(--visited);
+    outline: 2px solid  var(--hover);
 }
 
 .form-input label
@@ -539,9 +582,9 @@ small
     display: inline-block;
     padding: 1.5rem;
     background-color: transparent;
-    border: 1px solid #f2fffd;
+    border: 1px solid var(--color);
     border-radius: 5px;
-    color: #f2fffd;
+    color: var(--color);
     font-size: 1.5rem;
     text-decoration: none;
     transition: background-color 0.5s ease;
@@ -551,15 +594,15 @@ small
 
 .form-input input[type=submit]:hover
 {
-    color: #000;
-    background-color: rgba(	203, 255, 245, 0.9);
+    color: var(--background);
+    background-color: var(--color);
     cursor: pointer;
 }
 
 .form-input input[type=submit]:focus
 {
-    color: #000;
-    background-color: rgba(	203, 255, 245, 0.9);
+    color:var(--background);
+    background-color: var(--color);
     cursor: pointer;
 }
 
@@ -569,15 +612,17 @@ small
 }
 
 .form-footer a {
-    color: #cbfff5;
+    color: var(--color);
 }
 
 .form-footer a:hover {
+    color: var(--hover);
     text-decoration: underline;
     text-transform: uppercase;
 }
 
 .form-footer a:focus {
+    color: var(--hover);
     text-decoration: underline;
     text-transform: uppercase;
 }
